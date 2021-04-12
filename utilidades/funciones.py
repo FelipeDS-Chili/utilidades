@@ -179,6 +179,13 @@ def get_population(country):
 
     return None
 
+
+
+################
+#  DISTANCE  #
+################
+
+
 def haversine_vectorized(df,
                          start_lat="pickup_latitude",
                          start_lon="pickup_longitude",

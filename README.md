@@ -1,48 +1,8 @@
-# Data analysis
-- Document here the project: utilidades
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+# Utilidades
 
-Please document the project the better you can.
+Conjunto de methods, classes, trasnformers, encoders utiles que pueden ser usadas en el futuro.
 
-# Startup the project
 
-The initial setup.
-
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
-
-Unittest test:
-```bash
-make clean install test
-```
-
-Check for utilidades in gitlab.com/{group}.
-If your project is not set please add it:
-
-- Create a new project on `gitlab.com/{group}/utilidades`
-- Then populate it:
-
-```bash
-##   e.g. if group is "{group}" and project_name is "utilidades"
-git remote add origin git@github.com:{group}/utilidades.git
-git push -u origin master
-git push -u origin --tags
-```
-
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-utilidades-run
-```
 
 # Install
 
