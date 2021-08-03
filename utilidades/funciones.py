@@ -237,3 +237,68 @@ def simple_time_tracker(method):
             print(method.__name__, round(te - ts, 2))
         return result
 
+
+################
+#  METRICS  #
+################
+
+def compute_precision_macro(y_pred, y_true):
+
+    return precision_score(y_true, y_pred, average='macro')
+
+def compute_precision(y_pred, y_true):
+
+
+    return precision_score(y_true, y_pred)
+
+def compute_f1_macro(y_pred, y_true):
+
+
+    return precision_score(y_true, y_pred, average='macro')
+
+
+def compute_recall(y_pred, y_true):
+
+     return recall_score(y_true, y_pred)
+
+def compute_f1(y_pred, y_true):
+
+     return f1_score(y_true, y_pred)
+
+
+def compute_rmse(y_pred, y_true):
+    return np.sqrt(((y_pred - y_true) ** 2).mean())
+
+
+################
+#  DOWNCAST THE DATA  #
+################
+
+def df_optimized(df, verbose=False, **kwargs):
+    """
+    Reduces size of dataframe by downcasting numeircal columns
+    :param df: input dataframe
+    :param verbose: print size reduction if set to True
+    :param kwargs:
+    :return: df optimized
+    """
+    in_size = df.memory_usage(index=True).sum()
+    # Optimized size here
+    for type in ["float", "integer"]:
+        l_cols = list(df.select_dtypes(include=type))
+        for col in l_cols:
+            df[col] = pd.to_numeric(df[col], downcast=type)
+            if type == "float":
+                df[col] = pd.to_numeric(df[col], downcast="integer")
+    out_size = df.memory_usage(index=True).sum()
+    ratio = (1 - round(out_size / in_size, 2)) * 100
+    GB = out_size / 1000000000
+    if verbose:
+        print("optimized size by {} % | {} GB".format(ratio, GB))
+    return df
+
+
+if __name__ == '__main__':
+
+
+    print(get_data(model_features = True))

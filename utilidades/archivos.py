@@ -10,8 +10,10 @@ from shutil import copytree, ignore_patterns
 from subprocess import call
 
 
+
 def search_replace(path, filename, word, newword):
     """ Open file search/replace and save inplace
+    busca archivo y reemplaza word por otra
     """
     res = []
     with open('{}/{}'.format(path, filename), 'r') as myfile:
