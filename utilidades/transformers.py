@@ -2,7 +2,7 @@ from sklearn.base import TransformerMixin
 from sklearn.base import BaseEstimator
 import pandas as pd
 import numpy as np
-from funciones import df_optimized
+from utilidades.funciones import df_optimized
 
 
 
