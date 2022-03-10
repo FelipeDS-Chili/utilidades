@@ -6,8 +6,8 @@ wheel>=0.29
 
 # data science
 numpy
-pandas
-scikit-learn
+pandas==1.3.5
+scikit-learn==1.0.1
 
 # tests/linter
 black
@@ -17,9 +17,8 @@ pytest
 yapf
 
 # API
-s3fs
 
 # utilities
 six>=1.14
 
-termcolor
+
